@@ -1,0 +1,72 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+    {% block css %}
+    
+    {% endblock css %}
+
+
+    {% block content %}
+
+    <header>
+        <h1 style="text-align: center;">Контакты</h1>
+    </header>
+
+    <div style="position: relative; width: 100%;">
+        <img src="{% static 'img/map.png' %}" style="width: 100%; height: auto;" alt="..." >
+
+        <div style="position: absolute; top: 5%; left: 55%; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; width: 30%;">
+            <h2>Наш офис</h2>
+
+            <div class="contact-info" style="background: white; border: 1px solid black; width: 100%; margin-bottom: 10px; color: black; padding-left: 5%;">
+                <br>
+                <p style="margin: 0;">10:00 - 20:00</p>
+                <h3 style="margin: 0; font-weight: 400; font-size: x-large;">Москва, ул. Примерная, д. 1</h3>
+                <br>
+                <p style="margin: 0;">Телефон</p>
+                <h3 style="margin: 0; font-weight: 400; font-size: x-large;">+7 (123) 456-78-90</h3>
+                <br>
+                <p style="margin: 0;">E-mail</p>
+                <h3 style="margin: 0; font-weight: 400; font-size: x-large;">info@parikmaherskie.ru</h3><br>
+            </div>
+        </div>
+    </div>
+    
+    <h2 style="margin-left: 5%; margin-bottom: 2%; text-align: center;">Наши магазины</h2>
+
+    <div class="container" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: space-around; margin-left: auto; margin-right: auto;">
+
+        
+    
+        <div class="contact-info" style="background: darkgrey; border: 1px solid black; width: 33%; margin-bottom: 10px; padding: 3%;">
+            <p><strong>Адрес:</strong> ул. Примерная, д. 1, Москва, Россия</p>
+            <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+            <p><strong>Email:</strong> info@parikmaherskie.ru</p>
+        </div>
+    
+        <div class="contact-info" style="background: darkgrey; border: 1px solid black; width: 33%; margin-bottom: 10px; padding: 3%;">
+            <p><strong>Адрес:</strong> ул. Первомайская, д. 103, Санкт-Петербург, Россия</p>
+            <p><strong>Телефон:</strong> +7 (800) 555-35-35</p>
+            <p><strong>Email:</strong> info@parikmaherskiepeter.ru</p>
+        </div>
+        
+        <div class="contact-info" style="background: darkgrey; border: 1px solid black; width: 33%; margin-bottom: 10px; padding: 3%;">
+            <p><strong>Адрес:</strong> ул. Азовская, д. 456, Ростов-на-Дону, Россия</p>
+            <p><strong>Телефон:</strong> +7 (980) 980-98-90</p>
+            <p><strong>Email:</strong> info@parikmaherskierostov.ru</p>
+        </div>
+    </div>
+    
+
+    {% endblock content %}
+
+
+
+
+ 
+    
+{% block js %}
+
+   
+{% endblock js %}
+

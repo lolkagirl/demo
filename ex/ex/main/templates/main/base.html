@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    {% block css %}{% endblock css %}
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'main:index' %}">Главная</a>
+        <a href="{% url 'main:contact' %}">Контакты</a>
+
+        <a href="{% url 'users:login' %}">Логин</a>
+
+        <a href="{% url 'tables:tables' %}">Форма</a>
+        {% comment %} <a href="{% url 'tables:contact' %}">бронирование</a> {% endcomment %}
+    </header>
+
+    {% block content %}{% endblock content %}    
+    
+</body>
+</html>

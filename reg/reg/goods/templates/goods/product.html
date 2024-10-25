@@ -1,0 +1,92 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block css %}
+<style>
+  /* Стиль для карточки товара */
+.product-details {
+  display: flex;
+  gap: 20px; /* Пространство между изображением и информацией */
+  margin-bottom: 30px; /* Отступ снизу */
+}
+
+.product-image {
+  width: 50%; /* Ширина изображения */
+  height: 50%; /* Высота изображения */
+}
+
+.product-image img {
+  width: 90%; /* Заполнить всю ширину контейнера */
+  height: 90%; /* Заполнить всю высоту контейнера */
+  object-fit: cover; /* Покрыть всю область, обрезая лишнее */
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column; /* Элементы будут располагаться вертикально */
+  gap: 10px; /* Пространство между элементами */
+}
+
+.price {
+  font-size: 20px; /* Размер шрифта для цены */
+  font-weight: bold; /* Жирный шрифт для цены */
+  color: #333; /* Цвет текста для цены */
+}
+
+h4 {
+  margin-top: 20px; /* Отступ сверху для заголовка "Характеристики" */
+}
+
+ul {
+  list-style: none; /* Убрать маркеры списка */
+  padding: 0; /* Убрать отступ у списка */
+}
+
+li {
+  margin-bottom: 5px; /* Отступ снизу для элементов списка */
+}
+
+button {
+  background-color: #4CAF50; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  padding: 10px 20px; /* Отступы внутри кнопки */
+  border: none; /* Убрать рамку кнопки */
+  border-radius: 5px; /* Закругленные углы кнопки */
+  cursor: pointer; /* Указать, что кнопка является кликабельной */
+  font-size: 16px; /* Размер шрифта кнопки */
+  transition: background-color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+button:hover {
+  background-color: #45a049; /* Цвет фона при наведении */
+}
+
+
+</style>
+{% endblock css %}
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+
+<div class="product-details">
+  <div class="product-image">
+    {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% else %}
+      <img src="{% static 'default_product_image.jpg' %}" alt="{{ product.name }}">
+    {% endif %}
+  </div>
+
+  <div class="product-info">
+    <p class="price">{{ product.price|floatformat:2 }} руб.</p>
+    <p>{{ product.description }}</p>
+    <h4>Характеристики:</h4>
+    <ul>
+      <li>Бренд: {{ product.brand }}</li>
+      <li>Год выпуска: {{ product.year_of_production }}</li>
+      <li>Модель: {{ product.name }}</li>
+    </ul>
+    <button>В корзину</button>
+  </div>
+</div>
+{% endblock %}
